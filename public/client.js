@@ -2,7 +2,7 @@ $(document).ready(function(){
   console.log('jquery was correctly sourced!');
   getAllSongs();
   function getAllSongs() {
-    $.ajax({
+    $.ajax({             // I'm hazy on what $.ajax is actually doing
       type: 'GET',
       url: '/songs',
       success: function(response) {
@@ -25,7 +25,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'POST',
       url: '/newSong',
-      data: newSongObject,
+      data: newSongObject, // This data line is mandatory, yeah?
       success: function(response) {
         console.log('response', response);
         getAllSongs();

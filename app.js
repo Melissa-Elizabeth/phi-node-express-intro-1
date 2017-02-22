@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express();
+var app = express(); // Why do we need this variable?
 var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
@@ -22,11 +22,11 @@ app.get('/songs', function(req, res) {
 });
 
 app.post('/newSong', function(req, res){
-  var newSong = req.body;
+  var newSong = req.body;  // I understand req.body is data from the client.js file, but I also don't understand.
   if(newSong.artist !== "Justin Bieber"){
     songList.push(newSong);
     console.log(songList);
-    res.sendStatus(200);
+    res.sendStatus(200); // How come we don't have a sendStatus in app.get?
   } else {
     res.sendStatus(500);
   }
